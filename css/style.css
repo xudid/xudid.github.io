@@ -1,0 +1,176 @@
+body{
+    background-color: #2FB3FB;
+    color: white;
+    margin: 0px;
+
+    
+
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    min-height:100vh;
+    
+    
+}
+
+.main{
+    
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-around;
+    
+}
+
+.doc{
+    
+    
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    
+}
+.structure{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.package{
+    display: flex;
+    flex-direction: row;
+}
+
+.class{
+
+    min-width: 60%;
+    flex-grow: 1;
+    word-wrap: break-word;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.package a{
+    text-decoration-line: none;
+    color: #F3F4F4;
+}
+
+.package a:hover{
+    text-decoration-line: underline;
+    color: #F3F4F4;
+}
+
+.element{
+    width: 100%;        
+    font-size: 2em;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu{
+    width: 10%;
+    flex-grow: 0;
+}
+
+.menu_element{
+    margin-top: 15px;
+    font-size: 1.5em;
+}
+
+.widgets{
+    background-color: #F25C05;;
+}
+
+.base{
+    background-color: #F2CB05;
+}
+
+.empty{
+    background-color: #2FB3FB;
+}
+
+.nested{
+    background-color: #F20519;
+}
+
+.tags{
+    background-color: #04BF45 ;
+
+}
+.attributes{
+    background-color: #03A688;
+}
+
+section{
+    width: 30%;
+    /*overflow-x: wrap*/
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+pre{
+    background-color: #F3F4F4;
+    color: black;
+    border-radius: 10px;
+    padding:0%;
+
+    /*overflow: auto;*/
+    vertical-align: middle;
+    text-align: left;
+    font-size: 1.8em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+}
+
+#what{
+    text-align: center;
+}
+
+header{
+    width: 100%;
+    background-color: #1D67FB;
+    color: #F3F4F4;
+   
+}
+
+header h1{
+    margin-left: 2%;
+    font-size: 3em;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   background-color: #1D67FB; 
+   padding: 10px;
+
+}
+
+nav a{
+    text-decoration: none;
+    background-color: #1D67FB;
+    color:  #F3F4F4;
+    margin:0px;
+    padding: 5px;
+    font-size: 1.7em;
+    width: 100%;
+    text-align: center;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #1D67FB;
+    color: #F3F4F4;
+    font-size: 1.5em;
+}
+
+@media print{
+    body page[size="A4"];
+}
