@@ -2,6 +2,7 @@ body{
     background-color: #2FB3FB;
     color: white;
     margin: 0px;
+    font-size: 1.3em;
 
     
 
@@ -56,6 +57,15 @@ body{
     color: #F3F4F4;
 }
 
+.large_width{
+    width: 90%;
+    margin:0 auto;
+}
+
+.half_height{
+    max-height: 50%;
+}
+
 .package a:hover{
     text-decoration-line: underline;
     color: #F3F4F4;
@@ -63,7 +73,7 @@ body{
 
 .element{
     width: 100%;        
-    font-size: 2em;
+    
     padding: 10px;
     text-align: center;
 }
@@ -103,7 +113,7 @@ body{
 }
 
 section{
-    width: 30%;
+    
     /*overflow-x: wrap*/
     display: flex;
     flex-direction: column;
@@ -115,14 +125,13 @@ pre{
     background-color: #F3F4F4;
     color: black;
     border-radius: 10px;
-    padding:0%;
-
-    /*overflow: auto;*/
+    padding:5%;
     vertical-align: middle;
-    text-align: left;
-    font-size: 1.8em;
+    
     white-space: pre-wrap;
     word-wrap: break-word;
+    font-family: Consolas,monospace
+    
 
 }
 
@@ -147,7 +156,9 @@ nav{
     flex-direction: row;
     justify-content: space-around;
    background-color: #1D67FB; 
-   padding: 10px;
+   padding: 0;
+   padding-top: 10px;
+   
 
 }
 
@@ -157,7 +168,7 @@ nav a{
     color:  #F3F4F4;
     margin:0px;
     padding: 5px;
-    font-size: 1.7em;
+    font-size: 1.3em;
     width: 100%;
     text-align: center;
 }
@@ -168,7 +179,7 @@ footer{
     justify-content: space-around;
     background-color: #1D67FB;
     color: #F3F4F4;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 @media print{

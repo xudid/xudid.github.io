@@ -1,83 +1,66 @@
-<section id="what">
-    <h2>What is it ?</h2>
-    <p>
-       USER INTERFACE PHP FRAMEWORK
-    </p>
+<div class="doc">
+    <div class="main">
+        <section id="what">
+            <h2>What is it ?</h2>
+            <p>
+                USER INTERFACE PHP FRAMEWORK
+            </p>
             HTML TAG IS OBJECT
-    <p> 
-    </p>
-</section>
-<section>
-    <h2>Getting started</h2>
-    <p>
-        How to install it?
-        <pre>composer require xudid/ui</pre>
-        How to use it ?
-        create a php file with the composer autoloader
-        <pre>require "../vendor/autoload.php";
-use Ui\Views\Page;
-use Ui\Widgets\Table\{
-                        DivRowTable,
-                        TableLegend,
-                        TableColumn
-                     };
-
-        </pre>
-    </p>
-</section>
-<section>
-    <h2>A little example</h2>
-    <pre>
-
+            <p>
+            </p>
+        </section>
+        <section>
+            <h2>Getting started</h2>
+            <p>
+                <h3>How to install it?</h3>
+                <pre>composer require xudid/ui</pre>
+            
+                <h3>How to use it ?</h3>
+                create a php file and include the composer autoloader 
+                <pre>require "../vendor/autoload.php";</pre>
+            </p>
+            
+            
+        </p>
+    </section>
+</div>
+<div class="doc">
+    <section class="large_width ">
+        <h2>A little example</h2>
+        <pre><code class="php5">
 require "../vendor/autoload.php";
-
 use Ui\Views\Page;
-
 use Ui\Widgets\Table\{
                         DivRowTable,
                         TableLegend,
                         TableColumn
-                     };
-
+                        };
 $css = "/css/style.css";
-
-$legend = new TableLegend(
-                            "Participants",
-                             TableLegend::TOP_LEFT
-                         );
-
-
+$legend = new TableLegend("Participants", TableLegend::TOP_LEFT);
 $table = new DivRowTable(
-             [$legend],
-             [
-                new TableColumn("name","Nom"),
-                new TableColumn("pseudo","Alias"),
-                new TableColumn("age","Age")
-             ],
-             [
-                [
-                    "name" => "Arthurus",
-                    "pseudo" => "Arthure",
-                    "age" => "33"
-                ],
-                ["name" => "Genievre",
-                 "pseudo" => "Geny",
-                 "age" => "31"
-                ],
-                ["name" => "Yvain",
-                 "pseudo" => "Lion,
-                 "age" => "18 ans "
-                ]
-             ],
-             false,
-             "/"
-            );
-
+    [$legend],
+    [
+        new TableColumn("name","Nom"),
+        new TableColumn("pseudo","Alias"),
+        new TableColumn("age","Age")
+    ],
+    [
+        [
+        "name" => "Arthurus", "pseudo" => "Arthure", "age" => "33"
+        ],
+        ["name" => "Genievre", "pseudo" => "Geny", "age" => "31"
+        ],
+        ["name" => "Yvain", "pseudo" => "Lion, "age" => "18 ans "
+        ]
+    ],
+    false,
+    "/"
+);
 $page = (new Page())->setTitle("Ma Page de Test");
 $page->body()->addElement($table);
-    
+
 echo $page;
-
-
-    </pre>
-</section>
+       </code></pre>
+    </section>
+</div>
+</div>

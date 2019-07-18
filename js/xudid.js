@@ -7,21 +7,26 @@ $(document).ready(function(){
                 loadNavBar("navdoc.html");
                 setContainerOrientation("column");
                 loadContent(page);
+                hljs.initHighlightingOnLoad();
             break;
 
         case 'documentation_item':
-                loadNavBar("navdoc.html");
+                loadNavBar("navdocitem.html");
                 setContainerOrientation("column");
                 loadDocumentationView();
                 setDocumentationViewTitle(item);
                 loadDocumentationPackageClassList(item);
                 loadPackageDocumentation(item);
+                hljs.initHighlightingOnLoad();
             break;
 
         case 'examples':
             loadNavBar("navexamples.html");
             setContainerOrientation("column");
             loadContent(page);
+            loadDocumentationPackageClassList(item);
+            loadPackageExample(item)
+            hljs.initHighlightingOnLoad();
             break;
 
         default:
@@ -30,6 +35,9 @@ $(document).ready(function(){
             page = "home";
             setContainerOrientation("row");
             loadContent(page);
+            $("pre").each(function (i, e) {
+                hljs.highlightBlock(e);
+            });
             break;
 
     }
@@ -66,6 +74,7 @@ function loadContent(page,item){
 
                 url:baseUrl,
                 type: 'GET',
+                async: false,
                 dataType: 'html',
                 success: function(code_html, statut){
                     $(code_html).appendTo("#container");
@@ -95,6 +104,8 @@ function loadDocumentationView()
     });
     
 }
+
+
 
 function setDocumentationViewTitle(item)
 {
@@ -146,6 +157,24 @@ function loadDocumentationPackageClassList(package)
 function loadPackageDocumentation(package)
 {
     let baseUrl = "documentation/"+package+"/"+package+".html";
+    $.ajax({
+        url:baseUrl,
+        type:'GET',
+        dataType:'html',
+       
+        success:function(code_html,statut){
+            $("#package_doc").append(code_html);
+        },
+
+        error:function(){
+
+        }
+    });
+}
+
+function loadPackageExample(package)
+{
+    let baseUrl = "examples/"+package+"/"+package+".html";
     $.ajax({
         url:baseUrl,
         type:'GET',
