@@ -4,34 +4,34 @@ $(document).ready(function(){
     
     switch(page){
         case 'documentation':
-                loadNavBar("navdoc.html");
+                loadNavBar(page);
                 setContainerOrientation("column");
                 loadContent(page);
                 hljs.initHighlightingOnLoad();
             break;
 
         case 'documentation_item':
-                loadNavBar("navdocitem.html");
+                loadNavBar(page);
                 setContainerOrientation("column");
                 loadDocumentationView();
                 setDocumentationViewTitle(item);
                 loadDocumentationPackageClassList(item);
-                loadPackageDocumentation(item);
+                loadPackageContent("documentation", item)
                 hljs.initHighlightingOnLoad();
             break;
 
         case 'examples':
-            loadNavBar("navexamples.html");
+            loadNavBar(page);
             setContainerOrientation("column");
             loadContent(page);
             loadDocumentationPackageClassList(item);
-            loadPackageExample(item)
+            loadPackageContent("examples",item);
             hljs.initHighlightingOnLoad();
             break;
 
         default:
             
-            loadNavBar("navhome.html");
+            loadNavBar("home");
             page = "home";
             setContainerOrientation("row");
             loadContent(page);
@@ -44,8 +44,10 @@ $(document).ready(function(){
     });
 
 function loadNavBar(page){
+    let baseUrl = "nav/nav"+page+".html";
+   
     $.ajax({
-                url:"nav/"+page,
+                url:baseUrl,
                 type: 'GET',
                 dataType: 'html',
                 success: function(code_html, statut){
@@ -154,27 +156,10 @@ function loadDocumentationPackageClassList(package)
     });
 }
 
-function loadPackageDocumentation(package)
+
+function loadPackageContent(contentType, package)
 {
-    let baseUrl = "documentation/"+package+"/"+package+".html";
-    $.ajax({
-        url:baseUrl,
-        type:'GET',
-        dataType:'html',
-       
-        success:function(code_html,statut){
-            $("#package_doc").append(code_html);
-        },
-
-        error:function(){
-
-        }
-    });
-}
-
-function loadPackageExample(package)
-{
-    let baseUrl = "examples/"+package+"/"+package+".html";
+    let baseUrl = contentType+"/"+package+"/"+package+".html";
     $.ajax({
         url:baseUrl,
         type:'GET',

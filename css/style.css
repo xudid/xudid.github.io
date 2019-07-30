@@ -1,3 +1,7 @@
+
+
+
+
 body{
     background-color: #2FB3FB;
     color: white;
@@ -157,20 +161,47 @@ nav{
     justify-content: space-around;
    background-color: #1D67FB; 
    padding: 0;
-   padding-top: 10px;
+   
    
 
 }
 
-nav a{
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+     width: 100%;
+     margin:0px;
+     padding:0px;
+
+}
+
+nav ul li{
+        display: flex;
+    flex-grow:1;
+}
+
+
+
+
+
+nav ul li a{
+
     text-decoration: none;
     background-color: #1D67FB;
     color:  #F3F4F4;
-    margin:0px;
     padding: 5px;
     font-size: 1.3em;
     width: 100%;
     text-align: center;
+    border-top-right-radius: 50px ;
+    border-top-left-radius: 30px;
+}
+
+nav ul li a:hover{
+        background-color: #F3F4F4;
+    color:  #1D67FB;
 }
 
 footer{
@@ -180,6 +211,51 @@ footer{
     background-color: #1D67FB;
     color: #F3F4F4;
     font-size: 1.3em;
+}
+
+
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+    .textnav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+     width: 100%;
+     margin:0px;
+     padding:0px;
+}
+
+.textnavitem{
+    border-radius: 0px;
+}
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+.textnav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+     width: 100%;
+     margin:0px;
+     padding:0px;
+}
+
+.textnavitem{
+    border-radius: 0px;
+}
+
+#class_list {
+    display: none;
 }
 
 @media print{
